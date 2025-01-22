@@ -11,6 +11,19 @@ spring:
       path: "/h2"
   profiles:
     include: null
+  datasource:
+    url: "${db-url}"
+    username: "${db-username}"
+    password: "${db-password}"
+    driver-class-name: "${db-driver}"
+  jpa:
+    database-platform: "${db-platform}"
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: "update"
 management:
   endpoints:
     web:
